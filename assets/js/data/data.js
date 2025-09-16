@@ -4,7 +4,7 @@ export const items = [
       {
         id: 1,
         titulo: "Res",
-        imagen: "./assets/img/res.svg",
+        imagen: "./assets/img/res.jpg",
         precio: 18000,
         quantity: 150,
         detalles: "Arroz, sopa, carne,ensalada,papas, tajada y jugo",
@@ -13,7 +13,7 @@ export const items = [
       {
         id: 2,
         titulo: "Molida",
-        imagen: "./assets/img/molida.svg",
+        imagen: "./assets/img/molida.jpg",
         precio: 18000,
         quantity: 150,
         detalles: "Arroz, sopa, carne,ensalada,papas, tajada y jugo",
@@ -22,7 +22,7 @@ export const items = [
       {
         id: 3,
         titulo: "Cerdo",
-        imagen: "./assets/img/cerdo.svg",
+        imagen: "./assets/img/cerdo.jpg",
         precio: 18000,
         quantity: 150,
         detalles: "Arroz, sopa, carne,ensalada,papas, tajada y jugo",
@@ -31,7 +31,7 @@ export const items = [
       {
         id: 4,
         titulo: "Chicharron",
-        imagen: "./assets/img/chicharron.svg",
+        imagen: "./assets/img/chicharron.jpg",
         precio: 18000,
         quantity: 150,
         detalles: "Arroz, sopa, carne,ensalada,papas, tajada y jugo",
@@ -40,7 +40,7 @@ export const items = [
       {
         id: 5,
         titulo: "Pechuga",
-        imagen: "./assets/img/pechuga.svg",
+        imagen: "./assets/img/pechuga.jpg",
         precio: 18000,
         quantity: 150,
         detalles: "Arroz, sopa, carne,ensalada,papas, tajada y jugo",
@@ -49,7 +49,7 @@ export const items = [
       {
         id: 6,
         titulo: "Res",
-        imagen: "./assets/img/res_frijol.svg",
+        imagen: "./assets/img/fres.jpg",
         precio: 19000,
         quantity: 150,
         detalles: "Arroz, sopa, carne,ensalada,papas,frijoles, tajada y jugo",
@@ -58,7 +58,7 @@ export const items = [
       {
         id: 7,
         titulo: "Cerdo",
-        imagen: "./assets/img/cerdo_frijoles.svg",
+        imagen: "./assets/img/fcer.jpg",
         precio: 19000,
         quantity: 150,
         detalles: "Arroz, sopa, carne,ensalada,papas,frijoles, tajada y jugo",
@@ -67,7 +67,7 @@ export const items = [
       {
         id: 8,
         titulo: "Molida",
-        imagen: "./assets/img/molida_frijol.svg",
+        imagen: "./assets/img/fmolida.webp",
         precio: 19000,
         quantity: 150,
         detalles: "Arroz, sopa, carne,ensalada,papas,frijoles, tajada y jugo",
@@ -76,7 +76,7 @@ export const items = [
       {
         id: 9,
         titulo: "Chicharron",
-        imagen: "./assets/img/chicharron_frijoles.svg",
+        imagen: "./assets/img/fchicharron.jpg",
         precio: 19000,
         quantity: 150,
         detalles: "Arroz, sopa, carne,ensalada,papas,frijoles, tajada y jugo",
@@ -85,7 +85,7 @@ export const items = [
       {
         id: 10,
         titulo: "Pechuga",
-        imagen: "./assets/img/filete_frijol.svg",
+        imagen: "./assets/img/fpechuga.png",
         precio: 19000,
         quantity: 150,
         detalles: "Arroz, sopa, carne,ensalada,papas,frijoles, tajada y jugo",
