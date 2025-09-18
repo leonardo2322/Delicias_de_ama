@@ -8,15 +8,20 @@ export const findProductModal = () => {
   const containerModal = document.querySelector(".modal__product-select");
 
   const cardProductSelect = (event, optionWrapper) => {
-    let card;
-    optionWrapper ? (card = event) : (card = event.target);
-    console.log(card.getAttribute("data-id"));
+    // optionWrapper ? (card = event) : (card = event.target);
+    const card = event && event.nodeType === 1 ? event : event.target;
     const id = parseInt(card.getAttribute("data-id"));
     let options;
-    optionWrapper
-      ? (options = { p: "caseros_bandejas" })
-      : (options = JSON.parse(localStorage.getItem("options")));
-
+    if (typeof optionWrapper === "string") {
+      // si pasas una cadena, la usamos como la 'p' deseada
+      options = { p: optionWrapper };
+    } else if (optionWrapper) {
+      // comportamiento antiguo: true => caseros_bandejas
+      options = { p: "caseros_bandejas" };
+    } else {
+      // comportamiento antiguo: false => leer localStorage
+      options = JSON.parse(localStorage.getItem("options"));
+    }
     const product = db.methods.find(id, options.p);
     let html = "";
 
@@ -84,7 +89,6 @@ export const findProductModal = () => {
   });
 
   const buttonCardSelect = (event) => {
-    console.log(event);
     event.stopPropagation();
     const closeModal = document.querySelectorAll(".close-modal");
     const card = event.target;
@@ -122,8 +126,16 @@ export const findProductModal = () => {
 
       renderProducts();
     } else if (event.target.classList.contains("wraper_opction")) {
-      cardProductSelect(event.target.parentNode.parentNode, true);
-      buttonCardSelect(event);
+      const card = event.target.parentNode.parentNode;
+
+      if (event.target.classList.contains("other")) {
+        cardProductSelect(card, "porciones_menu");
+        buttonCardSelect(event);
+      } else {
+        // comportamiento antiguo (sigue igual)
+        cardProductSelect(card, true);
+        buttonCardSelect(event);
+      }
     }
   });
 };

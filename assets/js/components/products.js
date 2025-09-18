@@ -161,7 +161,6 @@ function handleClickButton(event) {
 
 export const renderProducts = () => {
   let options = JSON.parse(window.localStorage.getItem("options"));
-  console.log(options);
   // Verificar si 'options' no está definido o es null
   if (!options) {
     // Si no está definido, establecerlo con el valor de 'standard'
