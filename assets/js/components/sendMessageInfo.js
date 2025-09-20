@@ -10,7 +10,7 @@ export const sendMessage = () => {
     const EditPlates = document.getElementById("textoEdit");
     const textEdit = EditPlates.value ? EditPlates.value : "Sin Ediciones";
     const mediosPago =
-      "Pago movil Provincial: 04128757762, C.I: 28.153.152 💵 ";
+      "Solicita nuestros medios de pago en el chat gracias , 💵 ";
     let textoProducto = "";
     let counterProduct = Math.round(Math.random() * 2557);
 
@@ -26,7 +26,7 @@ export const sendMessage = () => {
 
     let mensage = `Orden N°: ${counterProduct} \n \n Hola Te Saluda Palerossi👋 \n \n Tipo de servicio: Compra🛒\n \nMedios de Pago: ${mediosPago}💰💸 \n \n Descripcion: 📝\n ${textoProducto} \n \n Total Compra: $${totalCart}💵 \n \nLa Orden tiene las Siguientes Ediciones: \n \n${textEdit}📝 \n \n Gracias por comprar con nosotros enseguida te atenderemos🕦.`;
 
-    const tlf = "573502117928";
+    const tlf = "573005963735";
 
     const enlaceWhatsapp =
       `https://wa.me/${tlf}/?text=` + encodeURIComponent(mensage);
