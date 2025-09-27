@@ -30,6 +30,11 @@
                     <img src="./assets/img/delicias.jpg" alt="logo_delicias_ama" id="logoPa" />
                 </div>
                 <div class="icon-content">
+                    <div>
+                        <button id="toggle-theme" class="btn" title="Cambiar modo">
+  <i class="fa-solid fa-moon"></i>
+</button>
+                    </div>
                     <div class="icon cart" id="cart-menu">
                         <i class="fa-solid fa-cart-shopping"></i>
                         <span class="amount" id="cart-count"></span>
@@ -331,7 +336,10 @@
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>AOS.init();</script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- ...otros scripts... -->
+<script src="./assets/js/helpers/darkmode.js"></script>
     <script type="module" src="./assets/js/main.js"></script>
+
     <script>
         let year = document.getElementById("year");
         const date = new Date().getFullYear();
@@ -339,3 +347,4 @@
     </script>
 </body>
 </html>
+
