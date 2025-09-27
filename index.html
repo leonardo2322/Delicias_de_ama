@@ -1,430 +1,341 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Delicias de Ama</title>
-    <link rel="stylesheet" href="./assets/css/index.css" />
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <link rel="shortcut icon" href="./assets/img/delicias.jpg" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
-    />
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <script
-      src="https://kit.fontawesome.com/6c466b6382.js"
-      crossorigin="anonymous"
-    ></script>
-  </head>
+    <link rel="shortcut icon" href="./assets/img/delicias.jpg">
+    
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- External Libraries -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <script src="https://kit.fontawesome.com/6c466b6382.js" crossorigin="anonymous"></script>
+    
+    
+</head>
 
-  <body>
-    <!-- Navegacion -->
+<body>
+    <!-- Navigation -->
     <header class="headers">
-      <nav class="nav">
-        <div class="nav-content">
-          <div class="nav-title">
-            <span class="title">Delicias de Ama</span>
-            <img src="./assets/img/delicias.jpg" alt="logo_delicias_ama" id="logoPa" />
-          </div>
-          <div class="icon-content">
-            <div class="icon cart" id="cart-menu">
-              <i class="fa-solid fa-cart-shopping"></i>
-              <span class="amount" id="cart-count"></span>
-            </div>
-            <div class="icon menu" id="menu">
-              <i class="fa-solid fa-bars"></i>
-            </div>
-          </div>
-        </div>
-
-        <ul class="items" id="items">
-          <li class="item"><a href="#promotion">Promociones</a></li>
-          <li class="item"><a href="#product">Productos</a></li>
-          <li class="item"><a href="#contact">Contactanos</a></li>
-        </ul>
-
-        <div class="cart-items" id="cart">
-          <div class="cart-product" id="cart__container">
-            <div class="table">
-              <div class="table-head">
-                <h3 class="table-head-title">Productos</h3>
-              </div>
-              <div class="tbody"></div>
-            </div>
-          </div>
-
-          <div class="content-total-purchases">
-            <div class="editProductbox">
-              <div class="LABELDIV">
-                <label for="textoEdit" class="laveledit"
-                  >Ingresa Los Cambios a generar en tus articulos:</label
-                ><br />
-              </div>
-              <textarea
-                name="textoEdit"
-                id="textoEdit"
-                class="textarea info"
-                rows="4"
-                cols="50"
-                placeholder="Ejemplo: solo deseo 3 panes por favor dame mas informacion"
-              ></textarea>
-            </div>
-            <div class="total-products">
-              <span class="total">items <span id="itemsCart"></span></span>
-              <span class="subTotal" id="total"></span>
+        <nav class="nav">
+            <div class="nav-content">
+                <div class="nav-title">
+                    <span class="title fancy-title">Delicias de Ama</span>
+                    <img src="./assets/img/delicias.jpg" alt="logo_delicias_ama" id="logoPa" />
+                </div>
+                <div class="icon-content">
+                    <div class="icon cart" id="cart-menu">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span class="amount" id="cart-count"></span>
+                    </div>
+                    <div class="icon menu" id="menu">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+                </div>
             </div>
 
-            <div class="buy-button">
-              <button class="btn" id="trash">
-                Vaciar Carrito
-                <i class="fa-solid fa-trash"></i>
-              </button>
-              <button class="btn btn-whatsapp" id="send">
-                Finalizar Compra
-                <span><i class="fa-brands fa-whatsapp"></i></span>
-              </button>
+            <ul class="items" id="items">
+                <li class="item"><a href="#promotion">Promociones</a></li>
+                <li class="item"><a href="#product">Productos</a></li>
+                <li class="item"><a href="#contact">Contactanos</a></li>
+            </ul>
+
+            <div class="cart-items" id="cart">
+                <div class="cart-product" id="cart__container">
+                    <div class="table">
+                        <div class="table-head">
+                            <h3 class="table-head-title">Productos Seleccionados</h3>
+                        </div>
+                        <div class="tbody"></div>
+                    </div>
+                </div>
+
+                <div class="content-total-purchases">
+                    <div class="editProductbox">
+                        <div class="LABELDIV">
+                            <label for="textoEdit" class="laveledit">
+                                Personaliza tu pedido (opcional):
+                            </label>
+                        </div>
+                        <textarea
+                            name="textoEdit"
+                            id="textoEdit"
+                            class="textarea info"
+                            rows="4"
+                            cols="50"
+                            placeholder="Ejemplo: No bebida no arroz etc..."
+                        ></textarea>
+                    </div>
+                    <div class="total-products">
+                        <span class="total">Items: <span id="itemsCart">0</span></span>
+                        <span class="subTotal" id="total">$0.00</span>
+                    </div>
+
+                    <div class="buy-button">
+                        <button class="btn" id="trash">
+                            Vaciar Carrito
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
+                        <button class="btn btn-whatsapp" id="send">
+                            Finalizar Compra
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </button>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </nav>
-      <section class="mb-5" id="nav-transparent">
-        <h3 class="titulo-nav">botones de navegacion</h3>
-        <span class="badge rounded-pill text-bg-primary" id="button_badge"
-          >Planchas_saludabes</span
-        >
-        <span class="badge rounded-pill text-bg-primary" id="button_badge"
-          >Caseros_Bandejas</span
-        >
-        <span class="badge rounded-pill text-bg-primary" id="button_badge"
-          >porciones_menu</span
-        >
-      </section>
+        </nav>
+        
+        <section class="mb-5" id="nav-transparent">
+            <h3 class="titulo-nav">Categorías</h3>
+            <span class="badge rounded-pill text-bg-primary" id="button_badge" data-id="planchas_saludabes">
+                Planchas Saludables
+            </span>
+            <span class="badge rounded-pill text-bg-primary" id="button_badge" data-id="caseros_bandejas">
+                Caseros Bandejas
+            </span>
+            <span class="badge rounded-pill text-bg-primary" id="button_badge" data-id="porciones_menu">
+                Porciones Menú
+            </span>
+        </section>
     </header>
 
     <!-- Modal Description Product Select -->
     <div class="container_modal">
-      <div class="modal__product-select"></div>
+        <div class="modal__product-select"></div>
     </div>
 
-    <!-- Productos -->
+    <!-- Products Section -->
     <section>
-         <main
-      class="products"
-      id="product"
-      data-aos="fade-up"
-      data-aos-offset="200"
-      data-aos-delay="50"
-      data-aos-duration="600"
-      data-aos-easing="ease-in-out"
-    >
-      <h4 class="Information">
-        Desliza Para ver toda La informacion Ten en mente que algunos productos
-        se piden por encargo <br />
-        <i class="fa-solid fa-angle-down"></i>
-      </h4>
-      <h2 class="short-title">Productos</h2>
-      <div class="products__container" id="product-container"></div>
-      <div class="paginacion mb-5">
-        <button class="prev" id="prev">
-          <i class="fa-solid fa-chevron-left"></i>
-        </button>
-        <div class="number-page" id="number-page"></div>
-        <button class="next" id="next">
-          <i class="fa-solid fa-angle-right"></i>
-        </button>
-      </div>
-      <!-- Carousel -->
+        <main class="products" id="product" data-aos="fade-up" data-aos-offset="200" data-aos-delay="50" data-aos-duration="600" data-aos-easing="ease-in-out">
+            <h4 class="Information">
+                Desliza para ver toda la información. Ten en cuenta que algunos productos se piden por encargo
+                <br />
+                <i class="fa-solid fa-angle-down"></i>
+            </h4>
+            <h2 class="short-title">Nuestros Productos</h2>
+            <div class="products__container" id="product-container"></div>
+            <div class="paginacion mb-5">
+                <button class="prev" id="prev">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <div class="number-page" id="number-page"></div>
+                <button class="next" id="next">
+                    <i class="fa-solid fa-angle-right"></i>
+                </button>
+            </div>
 
-      <div
-        class="wrapper mt-5"
-        id="promotion"
-        data-aos="fade-up"
-        data-aos-offset="100"
-        data-aos-delay="200"
-        data-aos-duration="1000"
-        data-aos-easing="ease-in-out"
-      >
-        <h2 class="short-title">Promociones</h2>
-        <h5>Haz clic Para que elijas El Producto</h5>
-        <div class="swiper">
-          <!-- Additional required wrapper -->
-          <div class="swiper-wrapper">
-            <!-- Slides -->
-            <div class="swiper-slide" data-id="3">
-              <h3>Descuento del 10%</h3>
-              <p>Pidiendo 2 platos</p>
-              <a href="#2">
-                <img
-                  src="./assets/img/cerdo.webp"
-                  class="wraper_opction"
-                  alt="comida"
-                />
-              </a>
+            <!-- Carousel -->
+            <div class="wrapper mt-5" id="promotion" data-aos="fade-up" data-aos-offset="100" data-aos-delay="200" data-aos-duration="1000" data-aos-easing="ease-in-out">
+                <h2 class="short-title">Promociones Especiales</h2>
+                <h5>Haz clic para seleccionar el producto</h5>
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide" data-id="3">
+                            <h3>Descuento del 10%</h3>
+                            <p>Pidiendo 2 platos</p>
+                            <a href="#2">
+                                <img src="./assets/img/cerdo.webp" class="wraper_opction" alt="Promoción cerdo" />
+                            </a>
+                        </div>
+                        <div class="swiper-slide" data-id="2">
+                            <h3>Combo Especial 15% OFF</h3>
+                            <p>Un casero + una plancha por solo $2.50</p>
+                            <a href="#3">
+                                <img src="./assets/img/molida.jpg" class="wraper_opction" alt="Combo especial" />
+                            </a>
+                        </div>
+                        <div class="swiper-slide" data-id="21">
+                            <h3>Menú del Día</h3>
+                            <p>Plato completo con bebida incluida</p>
+                            <a href="#5">
+                                <img src="./assets/img/menudia.webp" class="wraper_opction other" alt="Menú del día" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
             </div>
-            <div class="swiper-slide" data-id="2">
-              <h3>Un casero + una plancha el 15%</h3>
-              <p>LLeva 2 paquetes por tan solo 2.5</p>
-              <a href="#3">
-                <img
-                  src="./assets/img/molida.jpg"
-                  class="wraper_opction"
-                  alt="comida"
-                />
-              </a>
-            </div>
-            <div class="swiper-slide" data-id="21">
-              <h3>Menu del dia</h3>
-              <p></p>
-              <a href="#5">
-                <img
-                  src="./assets/img/menudia.webp"
-                  class="wraper_opction other"
-                  alt="comida"
-                />
-              </a>
-            </div>
-            ...
-          </div>
-          <!-- If we need pagination -->
-          <div class="swiper-pagination"></div>
-
-          <!-- If we need navigation buttons -->
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
-        </div>
-      </div>
-    </main>
+        </main>
     </section>
 
     <!-- Shortcuts -->
-    <section
-      class="shortcuts mb-5"
-      data-aos="fade-up"
-      data-aos-offset="100"
-      data-aos-delay="200"
-      data-aos-duration="1000"
-      data-aos-easing="ease-in-out"
-    >
-      <h3 class="short-title" id="inforGeneral">Informacion General</h3>
+    <section class="shortcuts mb-5" data-aos="fade-up" data-aos-offset="100" data-aos-delay="200" data-aos-duration="1000" data-aos-easing="ease-in-out">
+        <h3 class="short-title" id="inforGeneral">Información General</h3>
 
-      <div class="shortcuts__content">
-        <div class="shortcuts__items" data-target="modal1" title="Ubicacion">
-          <img src="./assets/img/mapa.png" alt="ubicacion" />
-          <span>Ubica...</span>
+        <div class="shortcuts__content">
+            <div class="shortcuts__items" data-target="modal1" title="Ubicación">
+                <img src="./assets/img/mapa.png" alt="ubicación" />
+                <span>Ubicación</span>
+            </div>
+            <div class="shortcuts__items" data-target="modal3">
+                <img src="./assets/img/calendario.png" alt="horario" />
+                <span>Horarios</span>
+            </div>
+            <div class="shortcuts__items" data-target="modal4">
+                <img src="./assets/img/descuento.png" alt="descuento" />
+                <span>Promociones</span>
+            </div>
+            <div class="shortcuts__items" data-target="modal5">
+                <img src="./assets/img/afiliado.png" alt="afiliado" />
+                <span>Afiliados</span>
+            </div>
         </div>
 
-        <div class="shortcuts__items" data-target="modal3">
-          <img src="./assets/img/calendario.png" alt="horario" />
-          <span>Hora...</span>
-        </div>
-        <div class="shortcuts__items" data-target="modal4">
-          <img src="./assets/img/descuento.png" alt="descuento" />
-          <span>Prom...</span>
-        </div>
-        <div class="shortcuts__items" data-target="modal5">
-          <img src="./assets/img/afiliado.png" alt="afiliado" />
-          <span>Afiliado</span>
-        </div>
-      </div>
-      <div class="modal-container" id="modal1">
-        <div class="modal">
-          <div class="modal-header">
-            <h3>Ubicacion</h3>
-            <span class="close-modal"><i class="fa-solid fa-xmark"></i></span>
-          </div>
-          <div class="modal-body">
-            <div class="modal__container-img">
-              <iframe src="https://www.google.com/maps/embed?pb=!4v1758685286173!6m8!1m7!1sB3_FWC7nWj4JmmHu3OI1cA!2m2!1d6.169567464550764!2d-75.5892305213156!3f101.39848537181815!4f-6.837132676287169!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <!-- Modals -->
+        <div class="modal-container" id="modal1">
+            <div class="modal">
+                <div class="modal-header">
+                    <h3>Nuestra Ubicación</h3>
+                    <span class="close-modal"><i class="fa-solid fa-xmark"></i></span>
+                </div>
+                <div class="modal-body">
+                    <div class="modal__container-img">
+                        <iframe src="https://www.google.com/maps/embed?pb=!4v1758685286173!6m8!1m7!1sB3_FWC7nWj4JmmHu3OI1cA!2m2!1d6.169567464550764!2d-75.5892305213156!3f101.39848537181815!4f-6.837132676287169!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <h2>Encuéntranos en El Corozo, Caja de Agua, Calle Ocho - Frente al antiguo Taller de Pirella</h2>
+                </div>
             </div>
-          </div>
-          <div class="modal-footer">
-            <h2>
-              Encuentranos en el Corozo caja de agua calle ocho Frente al
-              antiguo Taller de pirella
-            </h2>
-          </div>
         </div>
-      </div>
-      <div class="modal-container" id="modal3">
-        <div class="modal">
-          <div class="modal-header">
-            <h3>Horarios</h3>
-            <span class="close-modal"><i class="fa-solid fa-xmark"></i></span>
-          </div>
-          <div class="modal-body">
-            <div class="modal__container-img">
-              <table class="table table-striped">
-                <thead>
-                  <tr>
-                    <th>Prestamos servicio dias</th>
-                    <th>Horas</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th>Lunes</th>
-                    <th>9:00 AM a 04:00 PM</th>
-                  </tr>
-                  <tr>
-                    <th>Martes</th>
-                    <th>9:00 AM a 04:00 PM</th>
-                  </tr>
-                  <tr>
-                    <th>Miercoles</th>
-                    <th>9:00 AM a 04:00 PM</th>
-                  </tr>
-                  <tr>
-                    <th>Jueves</th>
-                    <th>9:00 AM a 04:00 PM</th>
-                  </tr>
-                  <tr>
-                    <th>Viernes</th>
-                    <th>9:00 AM a 04:00 PM</th>
-                  </tr>
-                  <tr>
-                    <th>Sabados</th>
-                    <th>9:00 AM a 03:30 PM</th>
-                  </tr>
-                  <tr>
-                    <th>Domingos</th>
-                    <th>No Laboramos</th>
-                  </tr>
-                </tbody>
-              </table>
+
+        <div class="modal-container" id="modal3">
+            <div class="modal">
+                <div class="modal-header">
+                    <h3>Nuestros Horarios</h3>
+                    <span class="close-modal"><i class="fa-solid fa-xmark"></i></span>
+                </div>
+                <div class="modal-body">
+                    <div class="modal__container-img">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Día</th>
+                                    <th>Horario</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Lunes</td><td>9:00 AM - 4:00 PM</td></tr>
+                                <tr><td>Martes</td><td>9:00 AM - 4:00 PM</td></tr>
+                                <tr><td>Miércoles</td><td>9:00 AM - 4:00 PM</td></tr>
+                                <tr><td>Jueves</td><td>9:00 AM - 4:00 PM</td></tr>
+                                <tr><td>Viernes</td><td>9:00 AM - 4:00 PM</td></tr>
+                                <tr><td>Sábado</td><td>9:00 AM - 3:30 PM</td></tr>
+                                <tr><td>Domingo</td><td><strong>Cerrado</strong></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-      <div class="modal-container" id="modal4">
-        <div class="modal">
-          <div class="modal-header">
-            <h3>Promociones</h3>
-            <span class="close-modal"><i class="fa-solid fa-xmark"></i></span>
-          </div>
-          <div class="modal-body">
-            <div class="modal__container-img">
-              <img src="./assets/img/cerdo.webp" alt="Promo img" />
+
+        <div class="modal-container" id="modal4">
+            <div class="modal">
+                <div class="modal-header">
+                    <h3>Promociones Activas</h3>
+                    <span class="close-modal"><i class="fa-solid fa-xmark"></i></span>
+                </div>
+                <div class="modal-body">
+                    <div class="modal__container-img">
+                        <img src="./assets/img/cerdo.webp" alt="Promoción" class="img-fluid"/>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <h2>Lleva cualquier casero con un descuento del 10% pidiendo dos</h2>
+                </div>
             </div>
-          </div>
-          <div class="modal-footer">
-            <h2>
-              Lleva cualquier casero con un descuento del 10% pidiendo dos
-            </h2>
-          </div>
         </div>
-      </div>
-      <div class="modal-container" id="modal5">
-        <div class="modal">
-          <div class="modal-header">
-            <h3>Afiliados</h3>
-            <span class="close-modal"><i class="fa-solid fa-xmark"></i></span>
-          </div>
-          <div class="modal-body">
-            <div class="modal__container-img">
-              <img
-                src="./assets/img/afiliado.png"
-                style="width: 100px; height: 100px"
-                alt="Promo img"
-              />
-              <p>
-                Nuestros afiliados reciben Promociones, beneficios esclusivos,
-                notificaciones y tambien puedes realizar devoluciones comunicate
-                con nosotros en la parte inferior con nuestro asesor comercial
-                para unirte a nosotros
-              </p>
+
+        <div class="modal-container" id="modal5">
+            <div class="modal">
+                <div class="modal-header">
+                    <h3>Programa de Afiliados</h3>
+                    <span class="close-modal"><i class="fa-solid fa-xmark"></i></span>
+                </div>
+                <div class="modal-body">
+                    <div class="modal__container-img">
+                        <img src="./assets/img/afiliado.png" style="width: 100px; height: 100px; margin-bottom: 20px;" alt="Afiliados" />
+                        <p>
+                            Nuestros afiliados reciben promociones exclusivas, beneficios especiales, 
+                            notificaciones prioritarias y pueden realizar devoluciones. 
+                            Comunícate con nuestro asesor comercial para unirte a nosotros.
+                        </p>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </section>
 
-    <section
-      class="hero mt-5"
-      data-aos="fade-up"
-      data-aos-offset="100"
-      data-aos-delay="200"
-      data-aos-duration="1000"
-      data-aos-easing="ease-in-out"
-    >
-      <h1 class="local-information">Nuestras Instalaciones</h1>
-
-      <div class="container"> 
-        <img src="./assets/img/local_delicias.webp" class="img-fluid" alt="local_delicias">
-      </div>
-      <div class="hero-description">
-        <h1 class="hero__title">Restaurante Delicias de Ama</h1>
-        <p class="hero__paragraph">
-          Delicias de Ama, donde la tradición y el sabor se
-          encuentran en cada plato. 
-          Disfruta de nuestras especialidades
-        </p>
-      </div>
+    <!-- Hero Section -->
+    <section class="hero mt-5" data-aos="fade-up" data-aos-offset="100" data-aos-delay="200" data-aos-duration="1000" data-aos-easing="ease-in-out">
+        <h1 class="local-information">Nuestras Instalaciones</h1>
+        <div class="container"> 
+            <img src="./assets/img/local_delicias.webp" class="img-fluid" alt="Local Delicias de Ama">
+        </div>
+        <div class="hero-description">
+            <h1 class="hero__title fancy-title">Restaurante Delicias de Ama</h1>
+            <p class="hero__paragraph">
+                Delicias de Ama, donde la tradición y el sabor se encuentran en cada plato. 
+                Disfruta de nuestras especialidades preparadas con amor y los mejores ingredientes.
+            </p>
+        </div>
     </section>
+
     <!-- Footer -->
-    <footer
-      class="footer mt-5"
-      data-aos="fade-down"
-      data-aos-offset="100"
-      data-aos-delay="200"
-      data-aos-duration="1000"
-      data-aos-easing="ease-in-out"
-    >
-      <article class="contact" id="contact">
-        <h3 class="contact-title">Hablemos!</h3>
-        <p class="contact-description">
-          Puedes comunicarte por nuestras redes sociales correo y demas te
-          prestaremos el mejor servicio ademas obtendras grandes beneficios.
-        </p>
+    <footer class="footer mt-5" data-aos="fade-down" data-aos-offset="100" data-aos-delay="200" data-aos-duration="1000" data-aos-easing="ease-in-out">
+        <article class="contact" id="contact">
+            <h3 class="contact-title">¡Hablemos!</h3>
+            <p class="contact-description">
+                Puedes comunicarte por nuestras redes sociales, correo y más. 
+                Te prestaremos el mejor servicio y obtendrás grandes beneficios.
+            </p>
 
-        <div class="contact-redes">
-          <button>
-            <a href="mailto:paulagilr@hotmail.com" target="_blank"
-              >Email <span><i class="fa-solid fa-at"></i></span
-            ></a>
-          </button>
-          <button>
-            <a href="https://wa.me/+573005963735" target="_blank"
-              >Whatsapp <span><i class="fa-brands fa-whatsapp"></i></span
-            ></a>
-          </button>
-          <!-- <button>
-            <a
-              href="https://www.facebook.com/profile.php?id=100078886285916"
-              target="_blank"
-              >Facebook <span><i class="fa-brands fa-facebook"></i></span
-            ></a>
-          </button> -->
-          <button>
-            <a
-              href="https://www.instagram.com/dondeama_?igsh=MXg10ThwazcyM3fpbg==/"
-              target="_blank"
-              >Instagram <span><i class="fa-brands fa-instagram"></i></span
-            ></a>
-          </button>
-        </div>
-      </article>
+            <div class="contact-redes">
+                <button>
+                    <a href="mailto:paulagilr@hotmail.com" target="_blank">
+                        Email <i class="fa-solid fa-at"></i>
+                    </a>
+                </button>
+                <button>
+                    <a href="https://wa.me/+573005963735" target="_blank">
+                        WhatsApp <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                </button>
+                <button>
+                    <a href="https://www.instagram.com/dondeama_?igsh=MXg10ThwazcyM3fpbg==/" target="_blank">
+                        Instagram <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </button>
+            </div>
+        </article>
 
-      <span class="copy"
-        >Creador por Paper Company <span id="year"></span> &copy;</span
-      >
+        <span class="copy">
+            Creado por Paper Company <span id="year"></span> &copy;
+        </span>
     </footer>
 
+    <!-- Scroll Up Button -->
     <div class="scroll-up">
-      <i class="fa-solid fa-chevron-up"></i>
+        <i class="fa-solid fa-chevron-up"></i>
     </div>
 
+    <!-- Scripts -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-      AOS.init();
-    </script>
+    <script>AOS.init();</script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="module" src="./assets/js/main.js"></script>
     <script>
-      let year = document.getElementById("year");
-      const date = new Date().getFullYear();
-
-      year.innerHTML = date;
+        let year = document.getElementById("year");
+        const date = new Date().getFullYear();
+        year.innerHTML = date;
     </script>
-  </body>
+</body>
 </html>

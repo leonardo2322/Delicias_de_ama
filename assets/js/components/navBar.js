@@ -6,6 +6,8 @@ export const navBarMenu = () => {
 
   buttonToggle.addEventListener("click", () => {
     navMenu.classList.toggle("active");
+    console.log(buttonToggle);
+
     if (buttonToggle) {
       iconNav.classList.toggle("fa-xmark");
     }
