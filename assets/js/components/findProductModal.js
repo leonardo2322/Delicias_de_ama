@@ -114,12 +114,9 @@ export const findProductModal = () => {
       event.target.classList.contains("card-titulo") ||
       event.target.classList.contains("eyes")
     ) {
-      console.log(event.target);
       cardProductSelect(event);
       buttonCardSelect(event);
     } else if (event.target.classList.contains("badge")) {
-      console.log(event.target);
-
       let badge = event.target.getAttribute("data-id");
       let options = JSON.parse(localStorage.getItem("options"));
 

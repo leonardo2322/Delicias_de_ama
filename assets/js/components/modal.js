@@ -8,7 +8,6 @@ export const modal = () => {
     open.addEventListener("click", () => {
       const target = open.getAttribute("data-target");
       modalContent = document.getElementById(target); // Asignar el valor aquí
-      console.log(modalContent);
       modalContainer = modalContent.closest(".modal-container"); // Asignación global
       modalContainer.style.opacity = "1";
       modalContainer.style.visibility = "visible";
