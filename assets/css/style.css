@@ -75,6 +75,14 @@ body {
   transform: translateX(0);
   /* ← QUITAR el padding excesivo */
 }
+.item a {
+  text-decoration: none;
+  color: var(--text-dark);
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s, color 0.3s;
+  padding-bottom: 3px;
+}
+
 .nav .items .item {
   font-size: 1.3rem;
   font-weight: bold;
@@ -966,6 +974,44 @@ body.dark-mode .contact-description,
 body.dark-mode .contact-redes button a,
 body.dark-mode .copy {
   color: #f5f5f5; /* Asegura que todo el texto del footer sea claro */
+}
+body.dark-mode .shortcuts__items {
+  color: #ffffff;
+}
+body.dark-mode .shortcuts__items:hover {
+  color: #000000;
+}
+body.dark-mode .Information {
+  background-color: #2c3136;
+}
+body.dark-mode #items {
+  background: #23272a;
+}
+body.dark-mode #items a {
+  color: #ffffff;
+}
+body.dark-mode #cart {
+  color: #ffffff;
+  background-color: #23272a;
+}
+body.dark-mode .wrapper {
+  background-color: #2c3136;
+}
+body.dark-mode .wrapper h5 {
+  color: #ffffff;
+}
+body.dark-mode .shortcuts {
+  background-color: #2c3136;
+}
+body.dark-mode .tbody__container {
+  color: #000000;
+}
+body.dark-mode #items .item a i {
+  color: #ffffff;
+}
+body.dark-mode #nav-transparent {
+  background: #23272a;
+  border-bottom: #ff9800 2px solid;
 }
 
 body.dark-mode .contact-redes button {
