@@ -101,7 +101,8 @@ export const items = [
         imagen: "./assets/img/res_saludable.webp",
         precio: 20000,
         quantity: 1000,
-        detalles: "Refresco de cola tamaño personal",
+        detalles:
+          "Proteina a la plancha con ensalada,acompañante y jugo natural",
         disponible: true,
       },
       {
@@ -110,7 +111,8 @@ export const items = [
         imagen: "./assets/img/pechuga_saludable.webp",
         precio: 17000,
         quantity: 1000,
-        detalles: "Refresco de cola",
+        detalles:
+          "Proteina a la plancha con ensalada,acompañante y jugo natural",
         disponible: true,
       },
 
@@ -120,7 +122,8 @@ export const items = [
         imagen: "./assets/img/cerdo_saludable.jpg",
         precio: 18000,
         quantity: 100,
-        detalles: "Refresco de cola",
+        detalles:
+          "Proteina a la plancha con ensalada,acompañante y jugo natural",
         disponible: true,
       },
       {
@@ -129,7 +132,8 @@ export const items = [
         imagen: "./assets/img/molida_saludable.jpg",
         precio: 18000,
         quantity: 800,
-        detalles: "Refresco de lima-limón",
+        detalles:
+          "Proteina a la plancha con ensalada,acompañante y jugo natural",
         disponible: true,
       },
 
@@ -139,7 +143,8 @@ export const items = [
         imagen: "./assets/img/chicharron_saludable.jpg",
         precio: 19000,
         quantity: 1200,
-        detalles: "Agua sin gas",
+        detalles:
+          "Proteina a la plancha con ensalada,acompañante y jugo natural",
         disponible: true,
       },
       // {
